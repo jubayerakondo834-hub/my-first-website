@@ -2,40 +2,87 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <title>আমার প্রথম ওয়েবসাইট</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমার ড্যাশবোর্ড</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #2c3e50;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a2e;
             color: white;
+            margin: 0;
+            padding: 0;
+        }
+        /* সাইডবার বা হেডার এরিয়া */
+        header {
+            background-color: #16213e;
+            padding: 20px;
             text-align: center;
-            padding-top: 100px;
+            border-bottom: 2px solid #3498db;
         }
-        .container {
-            background-color: #34495e;
-            padding: 40px;
-            display: inline-block;
+        /* মেইন ড্যাশবোর্ড কন্টেইনার */
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+        /* ড্যাশবোর্ড কার্ড */
+        .card {
+            background-color: #0f3460;
+            padding: 30px;
+            width: 250px;
             border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: 0.3s;
         }
-        h1 { color: #3498db; }
+        .card:hover {
+            transform: translateY(-10px);
+            border: 1px solid #3498db;
+        }
+        h2 { color: #3498db; margin-bottom: 10px; }
+        p { font-size: 14px; color: #cbd5e0; }
+        
+        /* বাটন স্টাইল */
         .btn {
-            display: inline-block; 
-            margin-top: 20px; 
-            padding: 12px 24px; 
-            background-color: #1877f2; 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 25px; 
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #e94560;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
             font-weight: bold;
         }
+        .btn-yt { background-color: #ff0000; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>স্বাগতম!</h1>
-        <p>আমি ওয়েবসাইট ডেভেলপমেন্ট শিখছি।</p>
-       <a href="https://www.youtube.com/channel/UC8ySL818lNqud2C0ev9JBRg" target="_blank" class="btn" style="background-color: #ff0000;">আমার ইউটিউব চ্যানেল</a>
+
+    <header>
+        <h1>স্বাগতম আমার ড্যাশবোর্ড-এ!</h1>
+    </header>
+
+    <div class="dashboard">
+        <div class="card">
+            <h2>ইউটিউব</h2>
+            <p>আমার ইউটিউব চ্যানেলটি সাবস্ক্রাইব করে পাশে থাকুন।</p>
+            <a href="আপনার-ইউটিউব-লিঙ্ক" target="_blank" class="btn btn-yt">সাবস্ক্রাইব করুন</a>
+        </div>
+
+        <div class="card">
+            <h2>অ্যাকাউন্ট গ্যালারি</h2>
+            <p> আমি বিভিন্ন ধরনের অ্যাকাউন্ট বিক্রি করি</p>
+            <a href="#" class="btn"></a>
+        </div>
+
+        <div class="card">
+            <h2>যোগাযোগ</h2>
+            <p>আমার সাথে যোগাযোগ করতে নিচের বাটনে ক্লিক করুন।</p>
+            <a href="https://www.facebook.com/profile.php?id=61583401064295" target="_blank" class="btn" style="background-color: #1877f2;">ফেসবুক</a>
+        </div>
     </div>
+
 </body>
 </html>
