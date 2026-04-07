@@ -3,83 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>আমার শপ ড্যাশবোর্ড</title>
+    <title>আমার অনলাইন শপ</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             background-color: #1a1a2e;
             color: white;
             text-align: center;
-            margin: 0;
             padding: 20px;
         }
         header {
             background-color: #16213e;
             padding: 20px;
             border-radius: 10px;
-            border-bottom: 3px solid #3498db;
+            border-bottom: 3px solid #25d366; /* WhatsApp Green */
             margin-bottom: 30px;
         }
-        .container {
+        .item-list {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
         }
-        /* বাটনের স্টাইল */
         .item-btn {
             background-color: #0f3460;
             color: white;
             border: 2px solid #3498db;
-            padding: 15px 25px;
-            font-size: 18px;
+            padding: 15px;
             border-radius: 10px;
             cursor: pointer;
+            width: 150px;
             transition: 0.3s;
-            width: 200px;
         }
-        .item-btn:hover {
-            background-color: #3498db;
-            transform: scale(1.05);
-        }
-        /* দাম দেখানোর বক্স */
-        #price-display {
-            margin-top: 40px;
+        .item-btn:hover { background-color: #3498db; }
+
+        #price-box {
+            margin: 30px auto;
             padding: 20px;
-            background-color: #e94560;
-            display: inline-block;
+            background-color: #0f3460;
             border-radius: 10px;
-            font-size: 24px;
-            font-weight: bold;
-            min-width: 300px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            display: none; /* শুরুতে লুকানো থাকবে */
+            display: none;
+            max-width: 400px;
         }
+        
+        /* WhatsApp Button */
+        .ws-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background-color: #25d366;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .ws-btn:hover { background-color: #1ebea5; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>সবাইকে স্বাগতম!</h1>
-        <p>নিচের আইটেমগুলোতে ক্লিক করে প্রতি পিসের দাম দেখুন</p>
+        <h1>স্বাগতম আমাদের শপ-এ!</h1>
+        <p>আইটেমে ক্লিক করে দাম দেখুন এবং অর্ডার করুন</p>
     </header>
 
-    <div class="container">
-        <button class="item-btn" onclick="showPrice('Text Now', '৳ 100')">Text Now</button>
-        <button class="item-btn" onclick="showPrice('Gmail', '৳ 60')">Gmail</button>
-        <button class="item-btn" onclick="showPrice('Text Free', '৳ 100')">Text Free</button>
-        <button class="item-btn" onclick="showPrice('Facebook Account', 'TK 44')">Facebook Account</button>
+    <div class="item-list">
+        <button class="item-btn" onclick="showOrder('Gmail', '৳ 50')">Gmail</button>
+        <button class="item-btn" onclick="showOrder('Text Now', '৳ 100')">Text Now</button>
+        <button class="item-btn" onclick="showOrder('Facebook Account', '৳ 50')">Facebook Account</button>
     </div>
 
-    <div id="price-display"></div>
+    <div id="price-box">
+        <h2 id="item-name"></h2>
+        <p id="item-price" style="font-size: 24px; color: #25d366;"></p>
+        <a id="ws-link" href="#" target="_blank" class="ws-btn">হোয়াটসঅ্যাপে অর্ডার দিন</a>
+    </div>
 
     <script>
-        function showPrice(name, price) {
-            const display = document.getElementById('price-display');
-            display.style.display = 'inline-block';
-            display.innerHTML = name + "-এর দাম: " + price + " (Per pis)";
+        function showOrder(name, price) {
+            document.getElementById('price-box').style.display = 'block';
+            document.getElementById('item-name').innerText = name;
+            document.getElementById('item-price').innerText = "দাম: " + price;
+
+            
+            let myNumber = "01405675867"; 
+            let message = "হ্যালো, আমি আপনার ওয়েবসাইট থেকে '" + name + "' অর্ডার করতে চাই।";
+            
+            // লিঙ্ক তৈরি করা
+            let url = "https://wa.me/" + myNumber + "?text=" + encodeURIComponent(message);
+            document.getElementById('ws-link').href = url;
         }
     </script>
 
 </body>
-</html>let myNumber = "8801405675867";
+</html>
