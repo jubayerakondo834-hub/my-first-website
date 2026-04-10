@@ -64,8 +64,8 @@
 <body>
 
     <header>
-        <h1>স্বাগতম আমাদের শপ-এ!</h1>
-        <p>আইটেমে ক্লিক করে দাম দেখুন এবং অর্ডার করুন</p>
+        <h1>Wellcome To My Site!</h1>
+        <p>Click on the account to see the price and place an order.</p>
     </header>
 
     <div class="item-list">
@@ -77,18 +77,18 @@
     <div id="price-box">
         <h2 id="item-name"></h2>
         <p id="item-price" style="font-size: 24px; color: #25d366;"></p>
-        <a id="ws-link" href="#" target="_blank" class="ws-btn">হোয়াটসঅ্যাপে অর্ডার দিন</a>
+        <a id="ws-link" href="#" target="_blank" class="ws-btn">Order in Whatsapp</a>
     </div>
 
     <script>
         function showOrder(name, price) {
             document.getElementById('price-box').style.display = 'block';
             document.getElementById('item-name').innerText = name;
-            document.getElementById('item-price').innerText = "দাম: " + price;
+            document.getElementById('item-price').innerText = "Price: " + price;
 
             
             let myNumber = "+880 01405675867"; 
-            let message = "হ্যালো, আমি আপনার ওয়েবসাইট থেকে '" + name + "' অর্ডার করতে চাই।";
+            let message = "Hello, I want to order an account from you. '" + name + "' ";
             
             // লিঙ্ক তৈরি করা
             let url = "https://wa.me/" + myNumber + "?text=" + encodeURIComponent(message);
